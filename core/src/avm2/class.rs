@@ -578,9 +578,11 @@ impl<'gc> Class<'gc> {
                                 return Err(format!("VerifyError: Trait {} in class {} overrides final trait {} in class {}", instance_trait.name().local_name(), superclass_def.name().local_name(), supertrait.name().local_name(), superclass_def.name().local_name()).into());
                             }
 
+                            /*
                             if !instance_trait.is_override() {
                                 return Err(format!("VerifyError: Trait {} in class {} has same name as trait {} in class {}, but does not override it", instance_trait.name().local_name(), self.name().local_name(), supertrait.name().local_name(), superclass_def.name().local_name()).into());
                             }
+                            */
 
                             break;
                         }
