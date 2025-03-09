@@ -19,7 +19,11 @@ package flash.display {
         }
 
         public function get content():DisplayObject {
-            return this._contentLoaderInfo.content;
+            if (this._contentLoaderInfo.contentType == "application/x-shockwave-flash") {
+                return this._contentLoaderInfo.content;
+            } else {
+                throw new Error("Error #2148: Only local-with-filesystem and trusted local SWF files may access local resources.", 2148);
+            }
         }
 
         public native function load(request: URLRequest, context: LoaderContext = null):void;
